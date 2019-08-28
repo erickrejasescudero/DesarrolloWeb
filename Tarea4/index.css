@@ -1,6 +1,7 @@
 body {
 	background: #008080;
 	font: 15px 'trebuchet MS', 'lucida sans';
+	margin: 3em;
 }
 
 h1{
@@ -12,7 +13,6 @@ div.datos {
     list-style: none; 
     padding: 0;
     margin-bottom: 1em;
-
 }
 
 div.datos {
