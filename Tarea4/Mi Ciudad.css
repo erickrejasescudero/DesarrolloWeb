@@ -1,0 +1,17 @@
+body {
+	font: 15px 'trebuchet MS', 'lucida sans';
+    background: #008080;
+    margin: 3em;
+}
+dl {
+	position: relative;
+    display: block;
+    padding: .4em .4em .4em 4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+}
+
+dt {
+	font-size: 20px;
+}
