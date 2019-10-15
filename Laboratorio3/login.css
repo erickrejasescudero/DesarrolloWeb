@@ -1,0 +1,11 @@
+
+#contenedor{
+    width: 300px;
+    margin: 0 auto;
+    border: solid 2px black;
+    text-align: center;
+}
+
+#funciones{
+	text-align: center;
+}
