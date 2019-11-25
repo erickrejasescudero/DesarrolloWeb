@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4</title>
+    <script>
+    function mostrar(){
+        let padre=document.getElementById('enlacesP');
+        let enlaces=padre.children;
+        let arr=[];
+        let cont=0;
+        Object.keys(enlaces).map(posicion=>{
+            if(enlaces[posicion].localName==="a"){
+                cont++;
+                arr.push(enlaces[posicion].origin)
+            }
+        })
+        let location="Numero de enlaces: "+cont;
+        let res=document.getElementById('resultado');
+        let parrafo=document.createElement('p');
+        let textoLoc=document.createTextNode(location);
+        parrafo.appendChild(textoLoc);
+        res.appendChild(parrafo);
+        arr.map(data=>{
+            let parraf=document.createElement('p');
+            let textoP=document.createTextNode(data)
+            parraf.appendChild(textoP)
+            res.appendChild(parraf)
+        })
+    }
+    </script>
+</head>
+<body onload="mostrar()">
+    <div id="enlacesP">
+    <a href="http://www.google.com">Google</a>
+    <a href="https://www.reddit.com/">Reddit</a>
+    <a href="https://www.9gag.com/">9gag</a>
+    </div>
+    <div id="resultado">
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="ejercicio2.css">
+	<title>Ejercicio 2</title>
+</head>
+<body>
+	<div class="contenedorInput"> 	
+	</div>
+	<button onclick="evaluar()">Comprobar</button>
+	<button id="volverAjugar" onclick="volverAjugar()">Volver a jugar</button>		
+ 	<div id="res">
+ 	</div>
+
+	<script type="text/javascript">
+		let resultado="aventura";
+		function limpiar(){
+				document.getElementsByClassName('contenedorInput')[0].innerHTML="";
+				document.getElementById('res').innerHTML="";
+				llenarInput();
+		}
+
+		function llenarInput(){
+			for(var i=0;i<resultado.length;i++){
+				document.getElementsByClassName('contenedorInput')[0].innerHTML+="<input type='text' class='inputValue'/>";
+			}
+			let sug1=Math.floor(Math.random()*((resultado.length-1)-0+1))+1;
+			let sug2=Math.floor(Math.random()*((resultado.length-1)-0+1))+1;
+			if(sug1===sug2){
+				if(sug1<resultado.length){
+					sug1++;
+				}else if(sug2<resultado.length){
+					sug2++;
+				}else sug1--;
+			}
+			document.getElementsByClassName('inputValue')[sug1].value=resultado[sug1];
+			document.getElementsByClassName('inputValue')[sug2].value=resultado[sug2];
+
+
+		}
+
+		let cont=1;
+		function evaluar(){
+			let win=true;
+			for(let i=0;i<resultado.length;i++){
+				if(resultado[i]!==document.getElementsByClassName('inputValue')[i].value){
+					win=false;
+				}
+			}
+			if(win){
+				document.getElementById('res').innerHTML="Correcto";
+				document.getElementById('volverAjugar').style.display="block";	
+			}else{
+				document.getElementById('res').innerHTML="No es la palabra";
+			}
+			if(cont===7){
+				document.getElementById('res').innerHTML="Perdiste";
+				document.getElementById('volverAjugar').style.display="block";
+			}else{
+				cont++;
+			}
+		}
+
+		function volverAjugar(){
+			cont=1;
+			document.getElementById('volverAjugar').style.display="none";
+			limpiar();
+		}
+
+		console.log(1);
+		llenarInput();
+	</script>
+</body>
+</html>
