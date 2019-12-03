@@ -1,7 +1,7 @@
 function cambiarMes(opcion){
-	var d = new Date();
-    var mes = d.getMonth() + 1;
-    var anio = d.getFullYear();
+	var m = new Date();
+    var mes = m.getMonth() + 1;
+    var anio = m.getFullYear();
 	switch(opcion){
 		case "-anio":
 		anio--;
